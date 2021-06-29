@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block 'custom_head' %}
+    {% include 'blog/head.html' %}
+{% endblock %}
+
+{% block 'content' %}
+<div class="container-xxl mt-3">
+    <div class="row">
+        <h2>{{ post.title }} </h2><br/>
+        <p>
+            {{ post.content | safe }}
+        </p> 
+    </div>
+
+</div>
+
+{% endblock %}
