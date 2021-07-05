@@ -2,3 +2,6 @@
 pgdata
 static
 media
+node_modules
+yarn.lock
+

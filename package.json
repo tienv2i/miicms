@@ -1,0 +1,39 @@
+{
+  "name": "miicms",
+  "version": "1.0.0",
+  "description": "MiiCMS by HuynhAT",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config ./webpack/webpack.config.prod.js",
+    "serve": "webpack serve --open --config ./webpack/webpack.config.dev.js"
+  },
+  "repository": "https://github.com/tienv2i/miicms.git",
+  "author": "tienv2i<tienv2i@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/plugin-transform-runtime": "^7.14.5",
+    "@babel/preset-env": "^7.14.7",
+    "autoprefixer": "^10.2.6",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "css-loader": "^5.2.6",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.1.0",
+    "node-sass": "^6.0.1",
+    "postcss": "^8.3.5",
+    "postcss-loader": "^6.1.1",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.0.0",
+    "webpack": "^5.42.0",
+    "webpack-bundle-tracker": "^1.1.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.9.2",
+    "bootstrap": "^5.0.2",
+    "mathjax": "^3.2.0"
+  }
+}

@@ -37,7 +37,8 @@ else:
     ALLOWED_HOSTS = [os.getenv('HOST', default='')]
 
 STATICFILES_DIRS = [
-    PROJECT_DIR / 'static'
+    PROJECT_DIR / 'static',
+    BASE_DIR / 'frontend' / 'dist'
 ]
 
 
@@ -50,14 +51,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    '',
     'ckeditor',
     'ckeditor_uploader',
     'imagefield',
     'cabinet',
     'blog',
-    'home',
-    'search',
     'accounts',
+    'search',
 ]
 
 MIDDLEWARE = [
@@ -194,5 +195,11 @@ CKEDITOR_CONFIGS = {
     'full': {
         'toolbar': 'full',
         'height': 300,
+    }
+}
+
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json')
     }
 }
