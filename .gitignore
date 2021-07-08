@@ -4,5 +4,5 @@ static
 media
 node_modules
 yarn.*
-dist
-webpack-stats.json
+*/dist
+*/webpack-stats.json
