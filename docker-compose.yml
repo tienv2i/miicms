@@ -12,7 +12,7 @@ services:
         build: '.'
         container_name: 'djangosvc'
         ports: 
-            - 80:8000
+            - 8000:8000
         restart: always
         volumes: 
             - .:/usr/miicms
@@ -20,6 +20,18 @@ services:
             - db
         env_file: 
             - .env
+    # nginx:
+    #     build: './nginx'
+    #     container_name: 'nginx_server'
+    #     volumes: 
+    #         - .:/usr/miicms
+    #     ports: 
+    #         - 80:80
+    #     depends_on: 
+    #         - web
+    #         - db
+    #     env_file: 
+    #         - .env
     adminer:
         image: adminer:latest
         container_name: adminer

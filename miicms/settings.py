@@ -45,20 +45,19 @@ STATICFILES_DIRS = [
 # Application definition
 
 INSTALLED_APPS = [
+    'webpack_loader',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    '',
     'ckeditor',
     'ckeditor_uploader',
     'imagefield',
     'cabinet',
+    'home',
     'blog',
-    'accounts',
-    'search',
 ]
 
 MIDDLEWARE = [
@@ -200,6 +199,6 @@ CKEDITOR_CONFIGS = {
 
 WEBPACK_LOADER = {
     'DEFAULT': {
-        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json')
+        'STATS_FILE': os.path.join(BASE_DIR, 'frontend', 'webpack-stats.json')
     }
 }

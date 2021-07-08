@@ -4,4 +4,5 @@ static
 media
 node_modules
 yarn.lock
-
+dist
+webpack-stats.json

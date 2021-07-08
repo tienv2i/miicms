@@ -6,11 +6,12 @@ const BundleTracker = require('webpack-bundle-tracker');
 
 module.exports = {
     entry: {
-        main: './frontend/index.js',
+        app: './frontend/index.js',
     },
     output: {
         path: path.resolve(__dirname, '../frontend/dist'),
-        filename: 'js/[name].[hash:8].js'
+        publicPath: '/static/',
+        filename: 'js/[name].js'
     },
     module: {
         rules: [
@@ -38,7 +39,18 @@ module.exports = {
                     }
                   },
                 ],
-              },
+            },
+            {
+                test: /\.(woff|ttf|oet)$/i,
+                use: [
+                  {
+                    loader: 'file-loader',
+                    options: {
+                        filename: 'fonts/[name].[hash:8].[ext]'
+                    }
+                  },
+                ],
+            }
         ]
     },
     plugins: [
@@ -46,9 +58,16 @@ module.exports = {
             filename: 'index.html'
         }),
         new MiniCssExtractPlugin({
-            filename: 'css/style.[hash:8].css',
+            filename: 'css/style.css',
         }),
         new CleanWebpackPlugin(),
-        new BundleTracker({filename: './frontend/webpack-stats.json'})
-    ]
+        new BundleTracker({
+            filename: './frontend/webpack-stats.json'
+        })
+    ],
+    optimization: {
+        splitChunks: {
+          chunks: "all"
+        }
+    }
 }
