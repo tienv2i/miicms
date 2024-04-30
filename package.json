@@ -1,0 +1,8 @@
+{
+  "name": "miicms",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/tienv2i/miicms.git",
+  "author": "tienv2i <tienv2i@gmail.com>",
+  "license": "MIT"
+}
