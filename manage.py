@@ -4,6 +4,7 @@ import sys
 import dotenv
 
 dotenv.load_dotenv()
+sys.dont_write_bytecode = True
 
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "miiapp.settings.dev")
