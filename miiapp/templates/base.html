@@ -33,10 +33,21 @@
         {% endblock %}
     </head>
 
-    <body class="{% block body_class %}{% endblock %}">
+    <body class="{% block body_class %}{% endblock %} bg-light">
         {% wagtailuserbar %}
+        {% include "header.html" %}
+        <div class="container my-4" >
+            <div class="row">
+                <div class="col-lg-8 bg-white border p-4">
+                    {% block content %}{% endblock %}
+                </div>
+                <div class="col-lg-4 bg-white border p-4">
 
-        {% block content %}{% endblock %}
+                </div>
+            </div>
+        </div>
+        {% include "footer.html" %}
+
 
         {# Bootstrap javascript #}
         <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
