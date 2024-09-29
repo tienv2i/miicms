@@ -1,0 +1,15 @@
+{% extends "layout/blog_base.html" %}
+{% load wagtailcore_tags %}
+{% block main_content %}
+<article class="container g-0 bg-white border rounded p-4">
+    <h2 class="border-bottom pb-4 text-center">
+        {{ page.title }}
+    </h2>
+    <form action="{% pageurl page %}" method='post'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit message</button>
+    </form>
+</article>
+
+{% endblock main_content %}

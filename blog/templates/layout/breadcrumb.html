@@ -1,0 +1,13 @@
+
+<nav aria-label="breadcrumb" class="container p-4 border rounded bg-white mb-3">
+{% if page.get_ancestors|length > 1 %}
+    <ol class="breadcrumb mb-0">
+        {% for p in page.get_ancestors %}
+            {% if p.is_root == False %}
+                <li class="breadcrumb-item"><a href="{{ p.url }}">{{ p.title }}</a></li>
+            {% endif %}
+        {% endfor %}
+            <li class="active breadcrumb-item">{{ self.title }}</li>
+    </ol>
+{% endif %}
+</nav>

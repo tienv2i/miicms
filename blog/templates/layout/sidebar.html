@@ -1,0 +1,44 @@
+{% load wagtailcore_tags wagtailroutablepage_tags %}
+<div class="card mb-3">
+    <div class="card-header">
+        <h5>Search</h5>
+    </div>
+   <div class="card-body">
+    <form action="{% routablepageurl first_blog_page 'search_view' %}" method = 'GET'>
+        <div class="input-group">
+            <input type="text" name="q" id="search_text" class="form-control" placeholder="Input search here ..."/>
+            <button class="btn btn-secondary" type="submit">Search</button>
+        </div>
+    </form>
+   </div>
+</div>
+<div class="card mb-3">
+    <div class="card-header">
+        <h5>Categories</h5>
+    </div>
+    {% if all_categories %}
+    <ul class="list-group list-group-flush">
+        {% for category in all_categories %}
+            <li class="list-group-item">
+                <a href="{% routablepageurl  first_blog_page 'category_view' cat_slug=category.slug %}">{{ category.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</div>
+<div class="card">
+    <div class="card-header">
+        <h5>Tags</h5>
+    </div>
+    {% if all_categories %}
+    <div class="card-body">
+        <ul class="list-inline">
+        {% for tag in latest_10_tags %}
+            <li class="list-inline-item border p-2 mb-2">
+                <a href="{% routablepageurl  first_blog_page 'tag_view' tag_slug=tag.slug %}">{{ tag.name }}</a>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</div>

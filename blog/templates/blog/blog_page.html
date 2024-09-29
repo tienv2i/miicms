@@ -1,0 +1,36 @@
+{% extends "layout/blog_base.html" %}
+{% load static wagtailcore_tags wagtailimages_tags wagtailroutablepage_tags %}
+
+{% block main_content %}
+    {% for post in self.posts  %}
+    {% if self.filter_type %}
+    <div class="container bg-white mb-3 rounded p-4 border">
+        {{ self.filter_type }} by {{ self.filter_term }}: {{ self.filter_value }}
+    </div>
+    {% endif %}
+    <article class="card mb-3">
+        <div class="row g-0">
+            <div class="col-md-4">
+                {% image post.specific.header_image max-500x300 as tmp_image %}
+                <img src="{{ tmp_image.url }}" alt="{{ tmp_image.title }}" class="img-fluid rounded-start" />
+            </div>
+            <div class="col-md-8">
+                <div class="card-body overflow-hidden">
+                    <div class="card-title">
+                        <h5 class="pb-2 border-bottom"><a href="{% pageurl post %}">{{ post.title}}</a></h5>
+                        <span class="muted-text">Category: 
+                            {% for category in post.get_categories %}
+                                {{ category.category.name }} {% if not forloop.last %},&nbsp; {% endif %}
+                            {% endfor %}
+                        </span>
+                    </div>
+                    <div class="card-text">
+                        {% if post.specific.excerpt %}<div class="div">{{ post.specific.excerpt|safe }}</div>
+                        {% else %} {{ post.specific.body|safe }}{% endif %}
+                    </div>
+                </div>
+            </div>     
+        </div>  
+    </article>
+    {% endfor %}
+{% endblock main_content %}

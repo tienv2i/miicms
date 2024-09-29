@@ -1,0 +1,13 @@
+{% load static menu_tags %}
+
+<nav class="navbar navbar-expand-md bg-dark mb-3" data-bs-theme="dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">SHOPPI</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarContent" aria-controls="mainNavbarContent" aria-expanded="false" aria-label="Toggle main navbar navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNavbarContent">
+            {% main_menu template="layout/menus/main_menu.html" %}
+        </div>
+    </div>
+</nav>

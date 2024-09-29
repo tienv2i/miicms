@@ -1,0 +1,33 @@
+# Python
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+*.env
+*.venv
+venv/
+ENV/
+env/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+__pycache__/
+db.sqlite3
+media/
+staticfiles/
+local_settings.py
+
+# If you're using MySQL, PostgreSQL, or other database management systems, you can add their default files here
+*.db
+
+# OS-generated files:
+.DS_Store
+Thumbs.db
+
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+*$py
