@@ -152,7 +152,7 @@ class FeeedbackMessage(models.Model):
         FieldPanel('email'),
         FieldPanel('message')
     ]
-class BlogContactPage(SeoMixin, Page):
+class ContactPage(SeoMixin, Page):
     description = RichTextField(blank=True)
     content_panels = Page.content_panels + [
         FieldPanel('description'),

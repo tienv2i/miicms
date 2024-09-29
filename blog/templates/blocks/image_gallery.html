@@ -1,0 +1,15 @@
+{% load static wagtailimages_tags wagtailcore_tags %}
+<div class="image-gallery">
+    <h2>{{ self.title }}</h2>
+    <div class="gallery-images">
+        <ul class="list-inline">
+        {% for image in self.images %}
+            {% image image original as tmp_img %}
+            <li class="gallery-image list-inline-item">
+                <img src="{{ tmp_img.url }}" alt="{{ tmp_img.title }}" style="max-width: 200px" class="d-inline">
+            </li>
+        {% endfor %}
+        </ul>
+
+    </div>
+</div>

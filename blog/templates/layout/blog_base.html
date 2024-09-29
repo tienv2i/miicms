@@ -9,7 +9,13 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-    {% block extends_style %}{% endblock extends_style %}
+    {% block extends_style %}
+        <style>
+            a{
+                text-decoration: none;
+            }
+        </style>
+    {% endblock extends_style %}
 </head>
 <body class="bg-light">
     <header class="mb-3 ">

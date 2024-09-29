@@ -1,7 +1,7 @@
 {% extends "layout/blog_base.html" %}
 {% load static wagtailcore_tags wagtailimages_tags %}
 {% block main_content %}
-<article class="card mb-3">
+<article class="card mb-3 overflow-hidden">
     {% image page.header_image original as tmp_image %}
     <img src="{{ tmp_image.url}}" alt="tmp_image.title" class="card-img-top" />
     <div class="card-body">
